@@ -1,0 +1,112 @@
+/* body {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  } */
+  /* .background-image {
+    border :0;
+    background-image: url(/images/icon.png);
+    width:200px;
+    height:113px;   
+    display: block;  
+  } */
+  /* .foreground-image {/**/}
+
+  /* #tornadoimg, img{
+    width:100%;
+    height: auto;
+    background: url("http://wallpapercave.com/wp/JSzp1Qq.jpg");
+    background-repeat: repeat-y;
+    background-size: cover;  
+    overflow:hidden
+} */ */
+body{
+  background-image: url("http://wallpapercave.com/wp/JSzp1Qq.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+/* html { 
+  background: url(http://wallpapercave.com/wp/JSzp1Qq.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+} */
+
+
+/* .jumbotron {
+  background-image:http://wallpapercave.com/wp/JSzp1Qq.jpg;
+  height:300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom:1px solid #ff6a00
+}
+.jumbotron .container {
+  position:relative;
+  top:50px;
+} */
+
+
+
+
+/*   
+  select {
+    margin-bottom: 1em;
+    padding: .25em;
+    border: 0;
+    border-bottom: 2px solid currentcolor; 
+    font-weight: bold;
+    letter-spacing: .15em;
+    border-radius: 0;
+    &:focus, &:active {
+      outline: 0;
+      border-bottom-color: red;
+    }
+  }
+  
+  .images {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px 3px 3px 3px;
+    overflow: hidden;
+    box-shadow: 0 20px 15px -15px rgba(#000, .5);
+    /* img,
+    .loader, */
+    /* .no-selection {
+      display: none;
+      letter-spacing: .15em;
+      font-weight: bold;
+    }
+    &[data-selected=""]:not(.loading) {
+      background:black;
+      .no-selection {
+        display: block;
+      }
+    }
+    &.loading {
+      background: black;
+      .loader {
+        display: block;
+        animation: loading 1.5s linear;
+      }
+    }
+  /* } */ */ */
+  /* @for $i from 1 through 5 {
+    .images[data-selected="#{$i}"] {
+      img[data-image="#{$i}"] {
+        display: block;
+      }
+    }
+  }
+  
+  @keyframes loading {
+    to {
+      letter-spacing: .25em;
+    }
+  }
+   */
