@@ -63,22 +63,28 @@ function circleSize(scale) {
 
 // Create the tornado circle layers
 var oneCircle;
-var fiftyLayer   = L.layerGroup();
-var sixtyLayer   = L.layerGroup();
-var seventyLayer = L.layerGroup();
-var eightyLayer  = L.layerGroup();
-var ninetyLayer  = L.layerGroup();
-var aughtsLayer  = L.layerGroup();
-var teensLayer   = L.layerGroup();
+var fiftyLayer012   = L.layerGroup();
+var sixtyLayer012   = L.layerGroup();
+var seventyLayer012 = L.layerGroup();
+var eightyLayer012  = L.layerGroup();
+var ninetyLayer012  = L.layerGroup();
+var aughtsLayer012  = L.layerGroup();
+var teensLayer012   = L.layerGroup();
+var fiftyLayer345   = L.layerGroup();
+var sixtyLayer345   = L.layerGroup();
+var seventyLayer345 = L.layerGroup();
+var eightyLayer345  = L.layerGroup();
+var ninetyLayer345  = L.layerGroup();
+var aughtsLayer345  = L.layerGroup();
+var teensLayer345   = L.layerGroup();
 
-var decadeLayers    = [fiftyLayer, sixtyLayer, seventyLayer, eightyLayer, ninetyLayer, aughtsLayer, teensLayer];
-var decadeDataFiles = ["tornado-data-decades-csv/decade_50.csv",
-                      "tornado-data-decades-csv/decade_60.csv",
-                      "tornado-data-decades-csv/decade_70.csv",
-                      "tornado-data-decades-csv/decade_80.csv",
-                      "tornado-data-decades-csv/decade_90.csv",
-                      "tornado-data-decades-csv/decade_00.csv",
-                      "tornado-data-decades-csv/decade_10.csv"];
+// var decadeDataFiles = ["tornado-data-decades-csv/decade_50.csv",
+//                       "tornado-data-decades-csv/decade_60.csv",
+//                       "tornado-data-decades-csv/decade_70.csv",
+//                       "tornado-data-decades-csv/decade_80.csv",
+//                       "tornado-data-decades-csv/decade_90.csv",
+//                       "tornado-data-decades-csv/decade_00.csv",
+//                       "tornado-data-decades-csv/decade_10.csv"];
 
 // Get the data 50s
 d3.csv("tornado-data-decades-csv/decade_50.csv", function(decadeData) {
@@ -91,17 +97,21 @@ d3.csv("tornado-data-decades-csv/decade_50.csv", function(decadeData) {
     var lon = decadeData[j]["BEGIN_LON"];
     var scale = decadeData[j]['TOR_F_SCALE'].substr(-1)
 
-
     oneCircle = L.circle([lat, lon], {
-        color: 'grey',
-        fillColor: getColor(scale),
-        fillOpacity: 0.95,
-        weight: 1,
-        radius: circleSize(scale)
-      });
-  //    }).bindPopup("<h1>Earthquake</h1> <hr> <h3>Magnitude: " + magnitude[i] +  "</h3><h3>Where: " + place[i] + "</h3><h3>When: " + convertTimestamp(dateTime[i]) + "</h3>").addTo(myMap);
-      oneCircle.addTo(fiftyLayer);
+      color: 'grey',
+      fillColor: getColor(scale),
+      fillOpacity: 0.95,
+      weight: 1,
+      radius: circleSize(scale)
+    });
+//    }).bindPopup("<h1>Earthquake</h1> <hr> <h3>Magnitude: " + magnitude[i] +  "</h3><h3>Where: " + place[i] + "</h3><h3>When: " + convertTimestamp(dateTime[i]) + "</h3>").addTo(myMap);
+    // Determine which layer (based on scale)
+    if (scale <= 2) {
+      oneCircle.addTo(fiftyLayer012);
+    } else {
+      oneCircle.addTo(fiftyLayer345);    
     }
+  }  
 });
 
 // Get the data 60s
@@ -115,17 +125,21 @@ d3.csv("tornado-data-decades-csv/decade_60.csv", function(decadeData) {
     var lon = decadeData[j]["BEGIN_LON"];
     var scale = decadeData[j]['TOR_F_SCALE'].substr(-1)
 
-
     oneCircle = L.circle([lat, lon], {
-        color: 'grey',
-        fillColor: getColor(scale),
-        fillOpacity: 0.95,
-        weight: 1,
-        radius: circleSize(scale)
-      });
+      color: 'grey',
+      fillColor: getColor(scale),
+      fillOpacity: 0.95,
+      weight: 1,
+      radius: circleSize(scale)
+    });
   //    }).bindPopup("<h1>Earthquake</h1> <hr> <h3>Magnitude: " + magnitude[i] +  "</h3><h3>Where: " + place[i] + "</h3><h3>When: " + convertTimestamp(dateTime[i]) + "</h3>").addTo(myMap);
-      oneCircle.addTo(sixtyLayer);
+    // Determine which layer (based on scale)
+    if (scale <= 2) {
+      oneCircle.addTo(sixtyLayer012);
+    } else {
+      oneCircle.addTo(sixtyLayer345);    
     }
+  }
 });
 
 // Get the data 70s
@@ -139,7 +153,6 @@ d3.csv("tornado-data-decades-csv/decade_70.csv", function(decadeData) {
     var lon = decadeData[j]["BEGIN_LON"];
     var scale = decadeData[j]['TOR_F_SCALE'].substr(-1)
 
-
     oneCircle = L.circle([lat, lon], {
         color: 'grey',
         fillColor: getColor(scale),
@@ -148,8 +161,13 @@ d3.csv("tornado-data-decades-csv/decade_70.csv", function(decadeData) {
         radius: circleSize(scale)
       });
   //    }).bindPopup("<h1>Earthquake</h1> <hr> <h3>Magnitude: " + magnitude[i] +  "</h3><h3>Where: " + place[i] + "</h3><h3>When: " + convertTimestamp(dateTime[i]) + "</h3>").addTo(myMap);
-      oneCircle.addTo(seventyLayer);
+    // Determine which layer (based on scale)
+    if (scale <= 2) {
+      oneCircle.addTo(seventyLayer012);
+    } else {
+      oneCircle.addTo(seventyLayer345);    
     }
+  }
 });
 
 // Get the data 80s
@@ -163,17 +181,20 @@ d3.csv("tornado-data-decades-csv/decade_80.csv", function(decadeData) {
     var lon = decadeData[j]["BEGIN_LON"];
     var scale = decadeData[j]['TOR_F_SCALE'].substr(-1)
 
-
     oneCircle = L.circle([lat, lon], {
-        color: 'grey',
-        fillColor: getColor(scale),
-        fillOpacity: 0.95,
-        weight: 1,
-        radius: circleSize(scale)
-      });
+      color: 'grey',
+      fillColor: getColor(scale),
+      fillOpacity: 0.95,
+      weight: 1,
+      radius: circleSize(scale)
+    });
   //    }).bindPopup("<h1>Earthquake</h1> <hr> <h3>Magnitude: " + magnitude[i] +  "</h3><h3>Where: " + place[i] + "</h3><h3>When: " + convertTimestamp(dateTime[i]) + "</h3>").addTo(myMap);
-      oneCircle.addTo(eightyLayer);
+    if (scale <= 2) {
+      oneCircle.addTo(eightyLayer012);
+    } else {
+      oneCircle.addTo(eightyLayer345);    
     }
+  }
 });
 
 // Get the data 80s
@@ -189,15 +210,19 @@ d3.csv("tornado-data-decades-csv/decade_90.csv", function(decadeData) {
 
 
     oneCircle = L.circle([lat, lon], {
-        color: 'grey',
-        fillColor: getColor(scale),
-        fillOpacity: 0.95,
-        weight: 1,
-        radius: circleSize(scale)
-      });
+      color: 'grey',
+      fillColor: getColor(scale),
+      fillOpacity: 0.95,
+      weight: 1,
+      radius: circleSize(scale)
+    });
   //    }).bindPopup("<h1>Earthquake</h1> <hr> <h3>Magnitude: " + magnitude[i] +  "</h3><h3>Where: " + place[i] + "</h3><h3>When: " + convertTimestamp(dateTime[i]) + "</h3>").addTo(myMap);
-      oneCircle.addTo(ninetyLayer);
+    if (scale <= 2) {
+      oneCircle.addTo(ninetyLayer012);
+    } else {
+      oneCircle.addTo(ninetyLayer345);    
     }
+  }
 });
 
 
@@ -212,17 +237,20 @@ d3.csv("tornado-data-decades-csv/decade_00.csv", function(decadeData) {
     var lon = decadeData[j]["BEGIN_LON"];
     var scale = decadeData[j]['TOR_F_SCALE'].substr(-1)
 
-
     oneCircle = L.circle([lat, lon], {
-        color: 'grey',
-        fillColor: getColor(scale),
-        fillOpacity: 0.95,
-        weight: 1,
-        radius: circleSize(scale)
-      });
+      color: 'grey',
+      fillColor: getColor(scale),
+      fillOpacity: 0.95,
+      weight: 1,
+      radius: circleSize(scale)
+    });
   //    }).bindPopup("<h1>Earthquake</h1> <hr> <h3>Magnitude: " + magnitude[i] +  "</h3><h3>Where: " + place[i] + "</h3><h3>When: " + convertTimestamp(dateTime[i]) + "</h3>").addTo(myMap);
-      oneCircle.addTo(aughtsLayer);
+    if (scale <= 2) {
+      oneCircle.addTo(aughtsLayer012);
+    } else {
+      oneCircle.addTo(aughtsLayer345);    
     }
+  }
 });
 
 // Get the data 80s
@@ -236,24 +264,27 @@ d3.csv("tornado-data-decades-csv/decade_10.csv", function(decadeData) {
     var lon = decadeData[j]["BEGIN_LON"];
     var scale = decadeData[j]['TOR_F_SCALE'].substr(-1)
 
-
     oneCircle = L.circle([lat, lon], {
-        color: 'grey',
-        fillColor: getColor(scale),
-        fillOpacity: 0.95,
-        weight: 1,
-        radius: circleSize(scale)
-      });
+      color: 'grey',
+      fillColor: getColor(scale),
+      fillOpacity: 0.95,
+      weight: 1,
+      radius: circleSize(scale)
+    });
   //    }).bindPopup("<h1>Earthquake</h1> <hr> <h3>Magnitude: " + magnitude[i] +  "</h3><h3>Where: " + place[i] + "</h3><h3>When: " + convertTimestamp(dateTime[i]) + "</h3>").addTo(myMap);
-      oneCircle.addTo(teensLayer);
+    if (scale <= 2) {
+      oneCircle.addTo(teensLayer012);
+    } else {
+      oneCircle.addTo(teensLayer345);    
     }
+  }
 });
 
 // Create the map object
 var myMap = L.map('map', {
       center: [39.8283, -98.5795],
       zoom: 5,
-      layers: [satellite, fiftyLayer]  // Only list one, the rest are an option to turn on
+      layers: [satellite, fiftyLayer012]  // Only list one, the rest are an option to turn on.
 });
 
 var baseMaps = {
@@ -263,13 +294,20 @@ var baseMaps = {
 };
 
 var overlayMaps = {
-    "1950s": fiftyLayer,
-    "1960s": sixtyLayer,
-    "1970s": seventyLayer,
-    "1980s": eightyLayer,
-    "1990s": ninetyLayer,
-    "2000s": aughtsLayer,
-    "2010s": teensLayer    
+    "1950s (0-2)": fiftyLayer012,
+    "1950s (3-5)": fiftyLayer345,
+    "1960s (0-2)": sixtyLayer012,
+    "1960s (3-5)": sixtyLayer345,
+    "1970s (0-2)": seventyLayer012,
+    "1970s (3-5)": seventyLayer345,
+    "1980s (0-2)": eightyLayer012,
+    "1980s (3-5)": eightyLayer345,
+    "1990s (0-2)": ninetyLayer012,
+    "1990s (3-5)": ninetyLayer345,
+    "2000s (0-2)": aughtsLayer012,
+    "2000s (3-5)": aughtsLayer345,
+    "2010s (0-2)": teensLayer012,
+    "2010s (3-5)": teensLayer345    
 };
 
 L.control.layers(baseMaps, overlayMaps).addTo(myMap);
