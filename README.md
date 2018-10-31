@@ -12,3 +12,12 @@ This can be accessed here: https://sqweets.github.io/Project2-TornadoAlley/.
 (Note that the files for this had to be in the /docs folder on the master branch for github pages to work.)
 
 <hr>
+
+Tableau was used as a data munging tool and to show how data can be visualized without the use of coding. Data cleanup, munging, and insight all occurred in Tableau. We showed several visualizations, including:
+1) All tornadoes and their associated # of deaths from 1950-Present. A filter could be used to move decade to decade. Tornadoes that caused a large number of deaths had large circles on their lat/long location within the map.
+2) A bubble chart showed that there was no correlation between a tornadoe's width and it's level of intensity (F level).
+3) A heat map that showed property damager per state over the 1950-1989 time period. After 1989, the methodology changes and the conversion of earlier data to conform with that methodology was outside the scope of this project.
+4) A bar and dot chart showed that, over time, the # of tornadoes has increased, but the overall avg. intensity has decreased.
+5) A worksheet could pull information off of a website in order to look into the background off a tornado.
+
+The data interacted througha actions and filters.
