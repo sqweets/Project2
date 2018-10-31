@@ -23,7 +23,7 @@ Tableau was used as a data munging tool and to show how data can be visualized w
 The data interacted througha actions and filters.
 <hr>
 
-<HTML +CSS + JAVASCRIPT> + <Web SCRAPING>
+<b> <HTML +CSS + JAVASCRIPT> + <Web SCRAPING> </b>
 
 -	Created a dynamic page which displays the current News and the hyperlink.
 -	
