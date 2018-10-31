@@ -26,5 +26,5 @@ The data interacted througha actions and filters.
 <b> <HTML +CSS + JAVASCRIPT> + <Web SCRAPING> </b>
 
 -	Created a dynamic page which displays the current News and the hyperlink.
--	
+-
 -	Displayed statewise data tornado data. The details displated tornado each decade and frequency from 0 to 5.
