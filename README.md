@@ -21,3 +21,10 @@ Tableau was used as a data munging tool and to show how data can be visualized w
 5) A worksheet could pull information off of a website in order to look into the background off a tornado.
 
 The data interacted througha actions and filters.
+<hr>
+
+<HTML +CSS + JAVASCRIPT> + <Web SCRAPING>
+
+-	Created a dynamic page which displays the current News and the hyperlink.
+-	
+-	Displayed statewise data tornado data. The details displated tornado each decade and frequency from 0 to 5.
